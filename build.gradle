@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'habens.main.TestTWSCSS'
+	}
+    baseName = 'tw-pos'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+
+    compile (
+        "commons-collections:commons-collections:3.2"
+    )
+    testCompile (
+        "junit:junit:4.12",
+        "org.mockito:mockito-core:1.9.5",
+    )
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.11'
+}
