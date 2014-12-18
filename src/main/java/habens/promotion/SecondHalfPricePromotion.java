@@ -12,10 +12,6 @@ import java.util.List;
 public class SecondHalfPricePromotion implements Promotion {
     private List<String> secondHalfPriceIDList;
 
-    public SecondHalfPricePromotion() {
-        secondHalfPriceIDList = new LinkedList<String>();
-    }
-
     public SecondHalfPricePromotion(List<String> secondHalfPriceIDList) {
         this.secondHalfPriceIDList = secondHalfPriceIDList;
     }

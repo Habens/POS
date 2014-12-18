@@ -1,7 +1,7 @@
-package habens.util.ParserImpl;
+package habens.parser.ParserImpl;
 
 import habens.util.Order;
-import habens.util.Parser;
+import habens.parser.Parser;
 
 /**
  * Created by habens on 12/8/14.

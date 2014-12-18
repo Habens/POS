@@ -13,15 +13,7 @@ import java.util.List;
 public class TWMarket {
     private List<Stock> stockList;
 
-    public TWMarket() {
-        stockList = new LinkedList<Stock>();
-    }
-
     public TWMarket(List<Stock> stockList) {
-        this.stockList = stockList;
-    }
-
-    public void setStockList(List<Stock> stockList) {
         this.stockList = stockList;
     }
 

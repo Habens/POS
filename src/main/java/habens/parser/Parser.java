@@ -1,4 +1,4 @@
-package habens.util;
+package habens.parser;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;

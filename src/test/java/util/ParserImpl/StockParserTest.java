@@ -1,6 +1,6 @@
 package util.ParserImpl;
 
-import habens.util.ParserImpl.StockParser;
+import habens.parser.ParserImpl.StockParser;
 import habens.util.Stock;
 import org.junit.Test;
 

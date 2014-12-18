@@ -1,6 +1,6 @@
 package util.ParserImpl;
 
-import habens.util.ParserImpl.SecondHalfPriceParser;
+import habens.parser.ParserImpl.SecondHalfPriceParser;
 import org.junit.Test;
 
 import java.io.BufferedReader;

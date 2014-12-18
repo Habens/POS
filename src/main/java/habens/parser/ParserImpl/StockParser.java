@@ -1,8 +1,8 @@
-package habens.util.ParserImpl;
+package habens.parser.ParserImpl;
 
 import habens.item.Item;
 import habens.item.NormalItem;
-import habens.util.Parser;
+import habens.parser.Parser;
 import habens.util.Stock;
 
 /**

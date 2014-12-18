@@ -1,6 +1,6 @@
 package util;
 
-import habens.util.ReduceCostCalculator;
+import habens.Calculator.ReduceCostCalculator;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

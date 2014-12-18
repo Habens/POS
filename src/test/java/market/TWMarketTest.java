@@ -18,8 +18,7 @@ public class TWMarketTest {
         List<Stock> stockList = new LinkedList<Stock>();
         stockList.add(new Stock(new NormalItem("ITEM01", 100), 100)); // id, price, number
 
-        TWMarket twMarket = new TWMarket();
-        twMarket.setStockList(stockList);
+        TWMarket twMarket = new TWMarket(stockList);
         List<Item> itemList = twMarket.getItemList();
 
         assertEquals(itemList.get(0).getID(), "ITEM01");

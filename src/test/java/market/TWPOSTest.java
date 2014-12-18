@@ -1,5 +1,6 @@
 package market;
 
+import habens.Calculator.ReduceCostCalculator;
 import habens.item.Item;
 import habens.item.NormalItem;
 import habens.market.TWPOS;
@@ -17,8 +18,9 @@ public class TWPOSTest {
     public void should_contains_the_item_when_create_from_list_contains_item() throws Exception {
         LinkedList<Item> itemLinkedList = new LinkedList<Item>();
         itemLinkedList.add(new NormalItem("ITEM01", 100));
+        ReduceCostCalculator reduceCostCalculator = new ReduceCostCalculator();
 
-        TWPOS twpos = new TWPOS(itemLinkedList);
+        TWPOS twpos = new TWPOS(itemLinkedList, reduceCostCalculator);
 
         assertEquals("ITEM01", twpos.getItemList().get(0).getID());
         assertEquals(100, twpos.getItemList().get(0).getPrice(), 0.01);
@@ -26,10 +28,11 @@ public class TWPOSTest {
 
     @Test
     public void should_get_right_cost_when_checkout() throws Exception {
-        TWPOS twpos = new TWPOS();
         List<Item> itemList = new LinkedList<Item>();
-        itemList.add( new NormalItem("ITEM000001", 10));
-        twpos.setItemList(itemList);
+        ReduceCostCalculator reduceCostCalculator = new ReduceCostCalculator();
+        itemList.add(new NormalItem("ITEM000001", 10));
+        TWPOS twpos = new TWPOS(itemList, reduceCostCalculator);
+
         List<Order> orderList = new LinkedList<Order>();
         orderList.add(new Order("ITEM000001", 1));
 

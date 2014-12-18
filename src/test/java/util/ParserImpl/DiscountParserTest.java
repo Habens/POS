@@ -1,7 +1,7 @@
 package util.ParserImpl;
 
 import habens.util.DiscountDetail;
-import habens.util.ParserImpl.DiscountParser;
+import habens.parser.ParserImpl.DiscountParser;
 import org.junit.Test;
 
 import java.io.BufferedReader;

@@ -1,22 +1,28 @@
 package habens.main;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import habens.Calculator.ReduceCostCalculator;
+import habens.injector.MyModule;
 import habens.market.TWMarket;
 import habens.market.TWPOS;
+import habens.parser.Parser;
 import habens.promotion.DiscountPromotion;
 import habens.promotion.SecondHalfPricePromotion;
 import habens.util.*;
-import habens.util.ParserImpl.CarParser;
-import habens.util.ParserImpl.DiscountParser;
-import habens.util.ParserImpl.SecondHalfPriceParser;
-import habens.util.ParserImpl.StockParser;
+import habens.parser.ParserImpl.CarParser;
+import habens.parser.ParserImpl.SecondHalfPriceParser;
+import habens.parser.ParserImpl.StockParser;
 
 import java.util.List;
 
 /**
  * Created by habens on 11/21/14.
  */
-public class TestTWSCSS {
+public class Shopping {
     public static void main(String[] args) {
+        Injector injector = Guice.createInjector(new MyModule());
+
         Parser parser;
 
         System.out.println("\n------------------\nMarket");
@@ -25,16 +31,15 @@ public class TestTWSCSS {
         TWMarket twMarket = new TWMarket(stockList);
         twMarket.show();
 
-        parser = new DiscountParser();
-        List<DiscountDetail> discountDetailList = parser.parseFromFile("./src/main/resources/discount_promotion.txt");
-        DiscountPromotion discountPromotion = new DiscountPromotion(discountDetailList);
+        DiscountPromotion discountPromotion = injector.getInstance(DiscountPromotion.class);
+        discountPromotion.initFormFile("./src/main/resources/discount_promotion.txt");
+
+        System.out.println("\n------------------\nDiscount Promotion");
+        discountPromotion.show();
 
         parser = new SecondHalfPriceParser();
         List<String> secondHalfPriceIDList = parser.parseFromFile("./src/main/resources/second_half_price_promotion.txt");
         SecondHalfPricePromotion secondHalfPricePromotion = new SecondHalfPricePromotion(secondHalfPriceIDList);
-
-        System.out.println("\n------------------\nDiscount Promotion");
-        discountPromotion.show();
 
         System.out.println("\n------------------\nSecondHalf Price Promotion");
         secondHalfPricePromotion.show();
@@ -50,7 +55,8 @@ public class TestTWSCSS {
         System.out.println("\n------------------\nCart");
         cart.show();
 
-        TWPOS twPOS = new TWPOS(twMarket.getItemList());
+        ReduceCostCalculator reduceCostCalculator = new ReduceCostCalculator();
+        TWPOS twPOS = new TWPOS(twMarket.getItemList(), reduceCostCalculator);
 
         System.out.println("\n---------------------------------");
         twPOS.checkout(cart.getOrderList()).show();

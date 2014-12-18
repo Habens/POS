@@ -1,5 +1,8 @@
 package promotion;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+import habens.injector.MyModule;
 import habens.item.DiscountItem;
 import habens.item.NormalItem;
 import habens.promotion.DiscountPromotion;
@@ -11,7 +14,8 @@ public class DiscountPromotionTest {
 
     @Test
     public void should_get_discount_item_when_item_was_updated() throws Exception {
-        DiscountPromotion discountPromotion = new DiscountPromotion();
+        Injector injector = Guice.createInjector(new MyModule());
+        DiscountPromotion discountPromotion = injector.getInstance(DiscountPromotion.class);
         NormalItem normalItem = new NormalItem("ITEM01", 100);
         DiscountItem discountItem = new DiscountItem(normalItem, 90);
 

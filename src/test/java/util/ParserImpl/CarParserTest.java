@@ -1,7 +1,7 @@
 package util.ParserImpl;
 
 import habens.util.Order;
-import habens.util.ParserImpl.CarParser;
+import habens.parser.ParserImpl.CarParser;
 import org.junit.Test;
 
 import java.io.BufferedReader;

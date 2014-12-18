@@ -1,10 +1,10 @@
 package habens.market;
 
 
+import habens.Calculator.ReduceCostCalculator;
 import habens.exception.IsNotThisMarketItemException;
 import habens.item.Item;
 import habens.util.Order;
-import habens.util.ReduceCostCalculator;
 import habens.util.Result;
 import habens.util.SubTotal;
 
@@ -18,19 +18,9 @@ public class TWPOS {
     private List<Item> itemList;
     private ReduceCostCalculator reduceCostCalculator;
 
-    public TWPOS() {
-        itemList = new LinkedList<Item>();
-        reduceCostCalculator = new ReduceCostCalculator();
-    }
-
-    public TWPOS(List<Item> itemList) {
-        if (itemList != null) {
-            this.itemList = itemList;
-            reduceCostCalculator = new ReduceCostCalculator();
-        } else {
-            this.itemList = new LinkedList<Item>();
-            reduceCostCalculator = new ReduceCostCalculator();
-        }
+    public TWPOS(List<Item> itemList, ReduceCostCalculator reduceCostCalculator) {
+        this.itemList = itemList;
+        this.reduceCostCalculator = reduceCostCalculator;
     }
 
     public List<Item> getItemList() {
