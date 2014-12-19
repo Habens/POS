@@ -3,14 +3,11 @@ package habens.injector;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.name.Names;
-import com.sun.istack.internal.NotNull;
 import habens.parser.Parser;
 import habens.parser.ParserImpl.CarParser;
 import habens.parser.ParserImpl.DiscountParser;
 import habens.parser.ParserImpl.SecondHalfPriceParser;
 import habens.parser.ParserImpl.StockParser;
-import habens.promotion.DiscountPromotion;
-import habens.promotion.Promotion;
 import habens.util.DiscountDetail;
 
 import java.util.Collections;
