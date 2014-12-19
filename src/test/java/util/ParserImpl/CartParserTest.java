@@ -1,7 +1,7 @@
 package util.ParserImpl;
 
 import habens.util.Order;
-import habens.parser.ParserImpl.CarParser;
+import habens.parser.ParserImpl.CartParser;
 import org.junit.Test;
 
 import java.io.BufferedReader;
@@ -11,10 +11,10 @@ import java.util.List;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
-public class CarParserTest  {
+public class CartParserTest {
     @Test
     public void should_get_order_list_when_given_stand_strings() throws Exception {
-        CarParser carParser = new CarParser();
+        CartParser carParser = new CartParser();
         List<Order> orderList = new LinkedList<Order>();
         BufferedReader reader = mock(BufferedReader.class);
         when(reader.readLine()).thenReturn("ITEM000001").thenReturn(null);
@@ -29,7 +29,7 @@ public class CarParserTest  {
 
     @Test
     public void should_get_order_list_when_given_stand_strings_contains_dividing_line() throws Exception {
-        CarParser carParser = new CarParser();
+        CartParser carParser = new CartParser();
         List<Order> orderList = new LinkedList<Order>();
         BufferedReader reader = mock(BufferedReader.class);
         when(reader.readLine()).thenReturn("ITEM000003-2").thenReturn(null);

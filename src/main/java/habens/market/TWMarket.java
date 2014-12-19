@@ -1,6 +1,9 @@
 package habens.market;
 
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import habens.item.Item;
+import habens.parser.Parser;
 import habens.promotion.Promotion;
 import habens.util.Stock;
 
@@ -12,10 +15,19 @@ import java.util.List;
  */
 public class TWMarket {
     private List<Stock> stockList;
+    private Parser parser;
 
-    public TWMarket(List<Stock> stockList) {
+    @Inject
+    public TWMarket(@Named("stock") List<Stock> stockList,
+                    @Named("stock") Parser parser) {
         this.stockList = stockList;
+        this.parser = parser;
     }
+
+    public void initFromFile(String filePath) {
+        this.stockList = parser.parseFromFile(filePath);
+    }
+
 
     public void addPromotion(Promotion promotion) {
         if (promotion != null) {

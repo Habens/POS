@@ -1,6 +1,8 @@
 package habens.market;
 
 
+import com.google.inject.Inject;
+import com.google.inject.name.Named;
 import habens.Calculator.ReduceCostCalculator;
 import habens.exception.IsNotThisMarketItemException;
 import habens.item.Item;
@@ -18,7 +20,9 @@ public class TWPOS {
     private List<Item> itemList;
     private ReduceCostCalculator reduceCostCalculator;
 
-    public TWPOS(List<Item> itemList, ReduceCostCalculator reduceCostCalculator) {
+    @Inject
+    public TWPOS(@Named("pos") List<Item> itemList,
+                 ReduceCostCalculator reduceCostCalculator) {
         this.itemList = itemList;
         this.reduceCostCalculator = reduceCostCalculator;
     }
@@ -81,6 +85,6 @@ public class TWPOS {
                 return itemList.get(i);
             }
         }
-        throw new IsNotThisMarketItemException("The market contains not " + ID);
+        throw new IsNotThisMarketItemException(ID + " isn't contained on this market");
     }
 }

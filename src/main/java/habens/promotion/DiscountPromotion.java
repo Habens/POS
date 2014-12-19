@@ -25,7 +25,7 @@ public class DiscountPromotion implements Promotion {
         this.discountParser = discountParser;
     }
 
-    public void initFormFile(String filePath) {
+    public void initFromFile(String filePath) {
         discountDetailList = discountParser.parseFromFile(filePath);
     }
 
