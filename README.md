@@ -1,11 +1,10 @@
 POS
 ===
-在原有基础上加入gradle，对工程结构有较大改变
+在原有基础上加入gradle，对工程结构有较大改变  
 
-为了加上Guice框架的依赖注入
-对 DiscountPromotion 做了一些改动，会与其他如 SecondeHalfPricePromotion，Car等的实现有些不同。
+加上Guice框架的依赖注入  
 
-详情见代码：
-Shopping.java
-DiscountPromotion.java
-MyModule.java (新增)
+值得注意的是Guice获取的List属于  
+Collections.unmodifiableCollection  
+初始化后不能对其进行更改  
+(暂时没有验证其他class是否也不能对其属性进行更改)

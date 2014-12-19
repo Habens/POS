@@ -23,8 +23,6 @@ public class Shopping {
     public static void main(String[] args) {
         Injector injector = Guice.createInjector(new MyModule());
 
-        Parser parser;
-
         TWMarket twMarket = injector.getInstance(TWMarket.class);
         twMarket.initFromFile("./src/main/resources/item_list.txt");
         DiscountPromotion discountPromotion = injector.getInstance(DiscountPromotion.class);
