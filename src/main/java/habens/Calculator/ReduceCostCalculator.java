@@ -5,6 +5,6 @@ package habens.Calculator;
  */
 public class ReduceCostCalculator {
     public int calculate(int cost, int reduce, int each) {
-        return (cost/each) * reduce;
+        return (cost / each) * reduce;
     }
 }

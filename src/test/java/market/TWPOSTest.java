@@ -10,7 +10,8 @@ import org.junit.Test;
 
 import java.util.LinkedList;
 import java.util.List;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class TWPOSTest {
 
@@ -38,6 +39,6 @@ public class TWPOSTest {
 
         Result result = twpos.checkout(orderList);
 
-        assertEquals(result.getTotal(), 10*1, 0.01);
+        assertEquals(result.getTotal(), 10 * 1, 0.01);
     }
 }

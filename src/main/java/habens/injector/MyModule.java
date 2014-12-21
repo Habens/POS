@@ -3,7 +3,6 @@ package habens.injector;
 import com.google.inject.AbstractModule;
 import com.google.inject.TypeLiteral;
 import com.google.inject.name.Names;
-import habens.Calculator.ReduceCostCalculator;
 import habens.item.Item;
 import habens.parser.Parser;
 import habens.parser.ParserImpl.CartParser;
@@ -24,23 +23,28 @@ import java.util.List;
 public class MyModule extends AbstractModule {
     @Override
     protected void configure() {
-        bind(new TypeLiteral<List<DiscountDetail>>(){})
+        bind(new TypeLiteral<List<DiscountDetail>>() {
+        })
                 .annotatedWith(Names.named("discount"))
                 .toInstance(Collections.unmodifiableList(new LinkedList<DiscountDetail>()));
 
-        bind(new TypeLiteral<List<String>>(){})
+        bind(new TypeLiteral<List<String>>() {
+        })
                 .annotatedWith(Names.named("secondHalfPrice"))
                 .toInstance(Collections.unmodifiableList(new LinkedList<String>()));
 
-        bind(new TypeLiteral<List<Stock>>(){})
+        bind(new TypeLiteral<List<Stock>>() {
+        })
                 .annotatedWith(Names.named("stock"))
                 .toInstance(Collections.unmodifiableList(new LinkedList<Stock>()));
 
-        bind(new TypeLiteral<List<Order>>(){})
+        bind(new TypeLiteral<List<Order>>() {
+        })
                 .annotatedWith(Names.named("cart"))
                 .toInstance(Collections.unmodifiableList(new LinkedList<Order>()));
 
-        bind(new TypeLiteral<List<Item>>(){})
+        bind(new TypeLiteral<List<Item>>() {
+        })
                 .annotatedWith(Names.named("pos"))
                 .toInstance(Collections.unmodifiableList(new LinkedList<Item>()));
 

@@ -16,6 +16,6 @@ public class SecondHalfPriceItem extends ItemDecorator {
     }
 
     public float cost(int number) {
-        return item.cost(number) - (item.cost(number)/number/2) * (number / 2);
+        return item.cost(number) - (item.cost(number) / number / 2) * (number / 2);
     }
 }

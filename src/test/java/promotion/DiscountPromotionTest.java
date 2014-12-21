@@ -8,7 +8,7 @@ import habens.item.NormalItem;
 import habens.promotion.DiscountPromotion;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class DiscountPromotionTest {
 
@@ -21,6 +21,6 @@ public class DiscountPromotionTest {
 
         assertEquals(discountPromotion.update(normalItem, 90).getClass(),
                 discountItem.getClass());
-        assertEquals(discountPromotion.update(normalItem, 90).cost(2), (100*90/100)*2, 0.01);
+        assertEquals(discountPromotion.update(normalItem, 90).cost(2), (100 * 90 / 100) * 2, 0.01);
     }
 }

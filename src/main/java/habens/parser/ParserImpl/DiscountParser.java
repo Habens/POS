@@ -1,9 +1,8 @@
 package habens.parser.ParserImpl;
 
 import com.google.inject.Inject;
-import com.google.inject.name.Named;
-import habens.util.DiscountDetail;
 import habens.parser.Parser;
+import habens.util.DiscountDetail;
 
 /**
  * Created by habens on 12/4/14.

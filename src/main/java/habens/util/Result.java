@@ -19,7 +19,7 @@ public class Result {
     }
 
     public void show() {
-        for (SubTotal subTotal:subTotalList) {
+        for (SubTotal subTotal : subTotalList) {
             subTotal.show();
         }
         System.out.println(total);

@@ -8,8 +8,6 @@ import habens.item.SecondHalfPriceItem;
 import habens.promotion.SecondHalfPricePromotion;
 import org.junit.Test;
 
-import java.util.LinkedList;
-
 import static org.junit.Assert.assertEquals;
 
 public class SecondHalfPricePromotionTest {

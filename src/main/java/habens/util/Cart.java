@@ -32,7 +32,7 @@ public class Cart {
      */
     private List<Order> adjustOrderList(List<Order> orderList) {
         List<Order> orderListTmp = new LinkedList<Order>();
-        for (int i=orderList.size()-1; i >=0; i--) {
+        for (int i = orderList.size() - 1; i >= 0; i--) {
             Order order = orderList.get(i);
             add(orderListTmp, order);
         }
@@ -62,7 +62,7 @@ public class Cart {
     }
 
     public void show() {
-        for (Order order:orderList) {
+        for (Order order : orderList) {
             System.out.println(order.getID() + ":" + order.getNumber());
         }
     }

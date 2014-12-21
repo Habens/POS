@@ -5,9 +5,9 @@ import habens.item.NormalItem;
 import habens.item.SecondHalfPriceItem;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-public class SecondHalfPriceItemTest{
+public class SecondHalfPriceItemTest {
 
     @Test
     public void should_get_promoted_cost_when_second_half_price() throws Exception {
@@ -17,6 +17,6 @@ public class SecondHalfPriceItemTest{
 
         float cost = item.cost(number);
 
-        assertEquals(cost, 100+100/2, 0.001);
+        assertEquals(cost, 100 + 100 / 2, 0.001);
     }
 }

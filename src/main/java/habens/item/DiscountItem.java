@@ -14,7 +14,7 @@ public class DiscountItem extends ItemDecorator {
     }
 
     public String getDescription() {
-        return "| "+ discount + " Discount " + item.getDescription();
+        return "| " + discount + " Discount " + item.getDescription();
     }
 
     public float cost(int number) {

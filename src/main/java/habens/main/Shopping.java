@@ -2,19 +2,12 @@ package habens.main;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import habens.Calculator.ReduceCostCalculator;
 import habens.injector.MyModule;
 import habens.market.TWMarket;
 import habens.market.TWPOS;
-import habens.parser.Parser;
 import habens.promotion.DiscountPromotion;
 import habens.promotion.SecondHalfPricePromotion;
-import habens.util.*;
-import habens.parser.ParserImpl.CartParser;
-import habens.parser.ParserImpl.SecondHalfPriceParser;
-import habens.parser.ParserImpl.StockParser;
-
-import java.util.List;
+import habens.util.Cart;
 
 /**
  * Created by habens on 11/21/14.
@@ -25,6 +18,7 @@ public class Shopping {
 
         TWMarket twMarket = injector.getInstance(TWMarket.class);
         twMarket.initFromFile("./src/main/resources/item_list.txt");
+
         DiscountPromotion discountPromotion = injector.getInstance(DiscountPromotion.class);
         discountPromotion.initFromFile("./src/main/resources/discount_promotion.txt");
 

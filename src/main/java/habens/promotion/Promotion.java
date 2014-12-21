@@ -9,5 +9,6 @@ import java.util.List;
  */
 public interface Promotion<T> {
     List<String> getItemIDList();
+
     Item update(Item item);
 }
